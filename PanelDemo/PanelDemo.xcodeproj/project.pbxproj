@@ -18,6 +18,7 @@
 		17E925C5266A072E0081ED0A /* DragState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925BE266A072E0081ED0A /* DragState.swift */; };
 		17E925C6266A072E0081ED0A /* PanelAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925BF266A072E0081ED0A /* PanelAnchor.swift */; };
 		17E925C7266A072E0081ED0A /* Handle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925C0266A072E0081ED0A /* Handle.swift */; };
+		17E925CB266A0D9E0081ED0A /* EdgeInsets+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925CA266A0D9E0081ED0A /* EdgeInsets+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		17E925BE266A072E0081ED0A /* DragState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragState.swift; sourceTree = "<group>"; };
 		17E925BF266A072E0081ED0A /* PanelAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelAnchor.swift; sourceTree = "<group>"; };
 		17E925C0266A072E0081ED0A /* Handle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Handle.swift; sourceTree = "<group>"; };
+		17E925CA266A0D9E0081ED0A /* EdgeInsets+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				17E925BD266A072E0081ED0A /* Array+Additions.swift */,
 				17E925BA266A072E0081ED0A /* BlurView.swift */,
 				17E925BE266A072E0081ED0A /* DragState.swift */,
+				17E925CA266A0D9E0081ED0A /* EdgeInsets+Additions.swift */,
 				17E925C0266A072E0081ED0A /* Handle.swift */,
 				17E925BB266A072E0081ED0A /* Panel.swift */,
 				17E925BF266A072E0081ED0A /* PanelAnchor.swift */,
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E925CB266A0D9E0081ED0A /* EdgeInsets+Additions.swift in Sources */,
 				17E925C5266A072E0081ED0A /* DragState.swift in Sources */,
 				17E925AB266A06F40081ED0A /* ContentView.swift in Sources */,
 				17E925C7266A072E0081ED0A /* Handle.swift in Sources */,

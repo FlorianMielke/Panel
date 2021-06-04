@@ -10,8 +10,8 @@ struct ContentView: View {
     @State private var panelAnchor = PanelAnchor.medium
     
     var body: some View {
-        GeometryReader { geometry in
-            Panel(anchor: $panelAnchor, insets: geometry.safeAreaInsets) {
+        VStack {
+            Panel(anchor: $panelAnchor) {
                 List {
                     ForEach(0..<100, id: \.self) {
                         Text("Element \($0)")
@@ -19,6 +19,8 @@ struct ContentView: View {
                 }
             }
         }
+        .background(Color.gray)
+        .ignoresSafeArea(.all)
     }
 }
 

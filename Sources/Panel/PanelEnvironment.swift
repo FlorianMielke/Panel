@@ -9,16 +9,17 @@ import SwiftUI
 struct PanelEnvironment {
     let anchor: PanelAnchor
     let geometry: GeometryProxy
-    let insets: EdgeInsets
     let sizeClass: UserInterfaceSizeClass?
     let dragState: DragState
     
+    let insets = EdgeInsets.panel
+
     var isCompact: Bool {
         sizeClass == .compact
     }
     
     var padding: EdgeInsets {
-        isCompact ? EdgeInsets() : EdgeInsets(top: insets.top + 10.0, leading: 10.0, bottom: 0.0, trailing: 0.0)
+        return isCompact ? EdgeInsets() : EdgeInsets(top: insets.top + 10.0, leading: 10.0, bottom: 0.0, trailing: 0.0)
     }
     
     var alignment: Alignment {

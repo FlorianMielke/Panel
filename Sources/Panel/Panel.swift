@@ -8,7 +8,6 @@ import SwiftUI
 
 struct Panel<Content: View> : View {
     @Binding var anchor: PanelAnchor
-    let insets: EdgeInsets
     @ViewBuilder var content: () -> Content
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -18,7 +17,7 @@ struct Panel<Content: View> : View {
     
     var body: some View {
         GeometryReader { geometry in
-            let environment = PanelEnvironment(anchor: anchor, geometry: geometry, insets: insets, sizeClass: horizontalSizeClass, dragState: dragState)
+            let environment = PanelEnvironment(anchor: anchor, geometry: geometry, sizeClass: horizontalSizeClass, dragState: dragState)
             
             VStack(spacing: 0) {
                 if environment.isCompact {
@@ -46,8 +45,8 @@ struct Panel<Content: View> : View {
                         onDragEnded(drag: value, environment: environment)
                     }
             )
+            .ignoresSafeArea(edges: .bottom)
         }
-        .edgesIgnoringSafeArea(.vertical)
     }
     
     private func onDragEnded(drag: DragGesture.Value, environment: PanelEnvironment) {
@@ -66,12 +65,12 @@ struct Panel_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            Panel(anchor: .constant(.medium), insets: EdgeInsets(top: 10.0, leading: 0.0, bottom: 0.0, trailing: 0.0)) {
+            Panel(anchor: .constant(.medium)) {
                 content
             }
             .previewDevice("iPad Pro (11-inch) (3rd generation)")
             
-            Panel(anchor: .constant(.small), insets: EdgeInsets(top: 10.0, leading: 0.0, bottom: 0.0, trailing: 0.0)) {
+            Panel(anchor: .constant(.small)) {
                 content
             }
             .previewDevice("iPhone 12 mini")
