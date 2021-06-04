@@ -1,5 +1,3 @@
-# Panel
-
 <p align="center">
     <img src="Logo.png" width="400" max-width="90%" alt="Panel" />
 </p>
@@ -14,6 +12,14 @@
 </p>
 
 Panel is a SwiftUI implementation of the known Maps Panel on iOS.
+
+## Usage
+
+First define a state property for the panel anchor.
+
+```swift
+@State private var panelAnchor = PanelAnchor.medium
+```
 
 ## Installation
 
@@ -36,6 +42,12 @@ import Panel
 ```
 
 For more information on how to use the Swift Package Manager, check out [its official documentation](https://swift.org/package-manager).
+
+
+## Acknowledgements
+
+This library is inspired by the awesome work of. 
+
 
 ## Contributions and support
 

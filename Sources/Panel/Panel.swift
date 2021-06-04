@@ -6,7 +6,9 @@
 
 import SwiftUI
 
-struct Panel<Content: View> : View {
+public protocol PanelView: View {}
+
+struct Panel<Content: View> : PanelView {
     @Binding var anchor: PanelAnchor
     @ViewBuilder var content: () -> Content
     
