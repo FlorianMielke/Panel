@@ -13,6 +13,9 @@
 
 Panel is a SwiftUI implementation of the known Maps Panel on iOS.
 
+![PanelDemo](https://user-images.githubusercontent.com/654406/120850156-5606d300-c577-11eb-8db2-3245318e766a.gif)
+
+
 ## Usage
 
 First define a state property for the panel anchor.
