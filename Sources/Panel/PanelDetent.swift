@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-public enum PanelAnchor: CaseIterable {
+public enum PanelDetent: CaseIterable {
     case large
     case medium
     case small

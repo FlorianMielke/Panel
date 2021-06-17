@@ -9,7 +9,7 @@ import SwiftUI
 public protocol PanelView: View {}
 
 public struct Panel<Content: View> : PanelView {
-    @Binding private var anchor: PanelAnchor
+    @Binding private var detent: PanelDetent
     private let content: () -> Content
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -17,16 +17,16 @@ public struct Panel<Content: View> : PanelView {
     @GestureState private var dragState = DragState.inactive
     private let shadowColor = Color(.sRGBLinear, white: 0, opacity: 0.13)
     
-    public init(anchor: Binding<PanelAnchor>, @ViewBuilder content: @escaping () -> Content) {
-        self._anchor = anchor
+    public init(detent: Binding<PanelDetent>, @ViewBuilder content: @escaping () -> Content) {
+        self._detent = detent
         self.content = content
     }
     
     public var body: some View {
         GeometryReader { geometry in
-            let environment = PanelEnvironment(anchor: anchor, geometry: geometry, sizeClass: horizontalSizeClass, dragState: dragState)
+            let environment = PanelEnvironment(detent: detent, geometry: geometry, sizeClass: horizontalSizeClass, dragState: dragState)
             
-            VStack(spacing: 0) {
+            VStack(spacing: environment.spacing) {
                 if environment.isCompact {
                     Handle()
                     content()
@@ -57,7 +57,7 @@ public struct Panel<Content: View> : PanelView {
     }
     
     private func onDragEnded(drag: DragGesture.Value, environment: PanelEnvironment) {
-        anchor = environment.anchor(for: drag)
+        detent = environment.anchor(for: drag)
     }
 }
 
@@ -72,12 +72,12 @@ struct Panel_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            Panel(anchor: .constant(.medium)) {
+            Panel(detent: .constant(.medium)) {
                 content
             }
             .previewDevice("iPad Pro (11-inch) (3rd generation)")
             
-            Panel(anchor: .constant(.small)) {
+            Panel(detent: .constant(.small)) {
                 content
             }
             .previewDevice("iPhone 12 mini")
