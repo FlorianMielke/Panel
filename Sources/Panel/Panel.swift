@@ -8,16 +8,21 @@ import SwiftUI
 
 public protocol PanelView: View {}
 
-struct Panel<Content: View> : PanelView {
-    @Binding var anchor: PanelAnchor
-    @ViewBuilder var content: () -> Content
+public struct Panel<Content: View> : PanelView {
+    @Binding private var anchor: PanelAnchor
+    private let content: () -> Content
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    @GestureState private var dragState = DragState.inactive
     
+    @GestureState private var dragState = DragState.inactive
     private let shadowColor = Color(.sRGBLinear, white: 0, opacity: 0.13)
     
-    var body: some View {
+    public init(anchor: Binding<PanelAnchor>, @ViewBuilder content: @escaping () -> Content) {
+        self._anchor = anchor
+        self.content = content
+    }
+    
+    public var body: some View {
         GeometryReader { geometry in
             let environment = PanelEnvironment(anchor: anchor, geometry: geometry, sizeClass: horizontalSizeClass, dragState: dragState)
             
