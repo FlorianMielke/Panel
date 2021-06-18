@@ -26,13 +26,14 @@ public struct Panel<Content: View> : PanelView {
         GeometryReader { geometry in
             let environment = PanelEnvironment(detent: detent, geometry: geometry, sizeClass: horizontalSizeClass, dragState: dragState)
             
-            VStack(spacing: environment.spacing) {
+            VStack(spacing: 0) {
                 if environment.isCompact {
                     Handle()
                     content()
                 } else {
                     content()
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                        .padding(.top, 16)
                     Handle()
                 }
             }
