@@ -7,7 +7,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var panelAnchor = PanelAnchor.medium
+    @State private var panelDetent = PanelDetent.medium
+    @State private var searchString = ""
     
     var body: some View {
         VStack {
@@ -17,10 +18,16 @@ struct ContentView: View {
                 .padding(100)
         }
         .panel(
-            Panel(anchor: $panelAnchor) {
-                List {
-                    ForEach(0..<100, id: \.self) {
-                        Text("Element \($0)")
+            Panel(detent: $panelDetent) {
+                VStack {
+                    TextField("Search", text: $searchString)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+                    
+                    List {
+                        ForEach(0..<100, id: \.self) {
+                            Text("Element \($0)")
+                        }
                     }
                 }
             })
@@ -31,6 +38,12 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                .previewDevice("iPhone 12 mini")
+            
+            ContentView()
+                .previewDevice("iPad Pro (11-inch) (3rd generation)")
+        }
     }
 }

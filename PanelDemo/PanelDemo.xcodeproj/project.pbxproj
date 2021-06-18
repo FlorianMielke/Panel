@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1743B164266A7B6500BC9C10 /* View+Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743B163266A7B6500BC9C10 /* View+Panel.swift */; };
+		17B2EB38267C992D007192A6 /* PanelDetent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2EB37267C992D007192A6 /* PanelDetent.swift */; };
 		17E925A9266A06F40081ED0A /* PanelDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925A8266A06F40081ED0A /* PanelDemoApp.swift */; };
 		17E925AB266A06F40081ED0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925AA266A06F40081ED0A /* ContentView.swift */; };
 		17E925AD266A06F50081ED0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E925AC266A06F50081ED0A /* Assets.xcassets */; };
@@ -17,13 +18,13 @@
 		17E925C3266A072E0081ED0A /* PanelEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925BC266A072E0081ED0A /* PanelEnvironment.swift */; };
 		17E925C4266A072E0081ED0A /* Array+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925BD266A072E0081ED0A /* Array+Additions.swift */; };
 		17E925C5266A072E0081ED0A /* DragState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925BE266A072E0081ED0A /* DragState.swift */; };
-		17E925C6266A072E0081ED0A /* PanelAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925BF266A072E0081ED0A /* PanelAnchor.swift */; };
 		17E925C7266A072E0081ED0A /* Handle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925C0266A072E0081ED0A /* Handle.swift */; };
 		17E925CB266A0D9E0081ED0A /* EdgeInsets+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E925CA266A0D9E0081ED0A /* EdgeInsets+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1743B163266A7B6500BC9C10 /* View+Panel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Panel.swift"; sourceTree = "<group>"; };
+		17B2EB37267C992D007192A6 /* PanelDetent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelDetent.swift; sourceTree = "<group>"; };
 		17E925A5266A06F40081ED0A /* PanelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E925A8266A06F40081ED0A /* PanelDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelDemoApp.swift; sourceTree = "<group>"; };
 		17E925AA266A06F40081ED0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		17E925BC266A072E0081ED0A /* PanelEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelEnvironment.swift; sourceTree = "<group>"; };
 		17E925BD266A072E0081ED0A /* Array+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Additions.swift"; sourceTree = "<group>"; };
 		17E925BE266A072E0081ED0A /* DragState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragState.swift; sourceTree = "<group>"; };
-		17E925BF266A072E0081ED0A /* PanelAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelAnchor.swift; sourceTree = "<group>"; };
 		17E925C0266A072E0081ED0A /* Handle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Handle.swift; sourceTree = "<group>"; };
 		17E925CA266A0D9E0081ED0A /* EdgeInsets+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,7 +97,7 @@
 				17E925CA266A0D9E0081ED0A /* EdgeInsets+Additions.swift */,
 				17E925C0266A072E0081ED0A /* Handle.swift */,
 				17E925BB266A072E0081ED0A /* Panel.swift */,
-				17E925BF266A072E0081ED0A /* PanelAnchor.swift */,
+				17B2EB37267C992D007192A6 /* PanelDetent.swift */,
 				17E925BC266A072E0081ED0A /* PanelEnvironment.swift */,
 				1743B163266A7B6500BC9C10 /* View+Panel.swift */,
 			);
@@ -197,10 +197,10 @@
 				17E925A9266A06F40081ED0A /* PanelDemoApp.swift in Sources */,
 				17E925C2266A072E0081ED0A /* Panel.swift in Sources */,
 				1743B164266A7B6500BC9C10 /* View+Panel.swift in Sources */,
+				17B2EB38267C992D007192A6 /* PanelDetent.swift in Sources */,
 				17E925C4266A072E0081ED0A /* Array+Additions.swift in Sources */,
 				17E925C3266A072E0081ED0A /* PanelEnvironment.swift in Sources */,
 				17E925C1266A072E0081ED0A /* BlurView.swift in Sources */,
-				17E925C6266A072E0081ED0A /* PanelAnchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
