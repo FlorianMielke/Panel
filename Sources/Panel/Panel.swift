@@ -29,12 +29,14 @@ public struct Panel<Content: View> : PanelView {
             VStack(spacing: 0) {
                 if environment.isCompact {
                     Handle()
+                        .zIndex(1.0)
                     content()
                 } else {
                     content()
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                         .padding(.top, 16)
                     Handle()
+                        .zIndex(1.0)
                 }
             }
             .frame(maxWidth: environment.width, maxHeight: environment.height, alignment: .top)
